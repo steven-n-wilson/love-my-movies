@@ -34,7 +34,13 @@ The app will look like this:
 - The movie plot/synopsis (`overview`)
 - Two vote buttons (UP/DOWN) which will increase/decrease the vote_count
 - Vote Count which will initialize at `vote_count`
-- Feel free to modify the layout to add anything you want.
+- Feel free to modify the layout to add anything you want. some suggested fields to display:
+  - vote_average
+  - runtime
+  - genres
+  - homepage
+  - imdb_id (prob generate an IMDb link)
+  - popularity
 
 
 > here only one box is shown, obviously you will work with a variable list of movies.
