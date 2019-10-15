@@ -15,6 +15,7 @@ We are going to reuse this design to have a "Like/Dislike | Recommend/Not Recomm
   - [Discover Movies](#discover-movies)
   - [Movie Details](#movie-details)
   - [Trending Movies](#trending-movies)
+- [Not Extras, but required (MUST)](#not-extras-but-required-must)
 
 <!-- /TOC -->
 
@@ -76,3 +77,17 @@ https://api.themoviedb.org/3/trending/movie/week?api_key=<api_key>>
 ```
 
 Which gave me [trending_movies.json](trending_movies.json)
+
+
+
+# Not Extras, but required (MUST)
+
+- Use Flask as backend (for now)
+- Use Redis as the counter DB (incr/decr vote_count)
+- Use Redis to store any details or additional info for the movies (JSON respond)
+- Use Redis as a cache.
+- CI/CD (you can use Gitlab CI /Travis/ Circle CI)
+- Dockerfile with a valid docker build & push to a valid Docker Hub repository.
+- A good html/css layout of your own.
+- Modularize everything with files and functions.
+- Use javascript to "Click and show more details of the movie"
