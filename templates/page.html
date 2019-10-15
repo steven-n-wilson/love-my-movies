@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homework</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=auto, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        background-color: white;
+      }
+      button {
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+        margin: 10px 10px 10px 10px;
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+      }
+      .td_edited {
+        padding: 0.5em 0.8em;
+        vertical-align: top;
+      }
+      .td_edited2 {
+        padding: 0.5em 0.8em;
+      }
+      .button1 {
+        background-color: green;
+        border: 2px solid white;
+        padding: 0px 0px;
+        height: 34px;
+        width: 132px;
+        position: absolute;
+        top: 74%;
+        left: 0%;
+      }
+      .button2 {
+        background-color: #ffffff;
+        border: 1.2px solid #d3d3d3;
+        color: black;
+        padding: 0px 0px;
+        height: 30px;
+        width: 130px;
+        position: absolute;
+        top: 75%;
+        left: 0%;
+      }
+      .button3 {
+        background-color: #ffffff;
+        border: 1.2px solid #d3d3d3;
+        color: black;
+        padding: 0px 0px;
+        height: 30px;
+        width: 130px;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+      }
+      @media screen and (min-width: 574px) {
+        .basic_card {
+          transition: 0.3s;
+          background-color: white;
+          padding: 8px 10px;
+          border-radius: 12px;
+          width: 300px;
+          height: 200px;
+          position: relative;
+          top: 20px;
+          display: inline-flex;
+          margin-right: 10px;
+        }
+        .basic_card2 {
+          transition: 0.3s;
+          background-color: white;
+          padding: 8px 10px;
+          border-radius: 12px;
+          width: 300px;
+          height: 200px;
+          position: relative;
+          top: 20px;
+          box-shadow: 1.5px 1.5px 0 1px rgb(230, 230, 230);
+          display: inline-flex;
+          margin-right: 10px;
+        }
+        .card {
+          transition: 0.3s;
+          background-image: linear-gradient(to bottom right, rgb(73, 73, 255), #add8e6);
+          padding: 2px 16px;
+          height: 300px;
+          overflow-x: auto;
+          overflow-y: auto;
+          white-space: nowrap;
+        }
+        .card2 {
+          transition: 0.3s;
+          background-image: white;
+          padding: 2px 16px;
+          overflow-x: auto;
+          overflow-y: auto;
+          white-space: nowrap;
+          height: 300px;
+        }
+        .card3 {
+          transition: 0.3s;
+          background-image: white;
+          padding: 2px 16px;
+          overflow-x: auto;
+          overflow-y: auto;
+          white-space: nowrap;
+          height: 250px;
+        }
+        h2 {
+          position: absolute;
+          top: 0px;
+          left: 10px;
+        }
+        h3 {
+          position: absolute;
+          top: 290px;
+          left: 10px;
+        }
+        .card-columns {
+          column-count: 5;
+        }
+      }
+      @media screen and (min-width: 0px) and (max-width: 573px) {
+        .card-columns {
+          column-count: 1;
+        }
+        .basic_card {
+          transition: 0.3s;
+          background-color: white;
+          padding: 8px 10px;
+          border-radius: 12px;
+          width: 92vw;
+          height: 200px;
+          position: relative;
+          top: 20px;
+          display: inline-flex;
+          margin-right: 10px;
+        }
+        .basic_card2 {
+          transition: 0.3s;
+          background-color: white;
+          padding: 8px 10px;
+          border-radius: 12px;
+          width: 92vw;
+          height: 200px;
+          position: relative;
+          top: 20px;
+          box-shadow: 1.5px 1.5px 0 1px rgb(230, 230, 230);
+          display: inline-flex;
+          margin-right: 10px;
+        }
+        .card {
+          transition: 0.3s;
+          background-image: linear-gradient(to bottom right, rgb(73, 73, 255), #add8e6);
+          padding: 2px 16px;
+          overflow-x: hidden;
+          overflow-y: auto;
+          white-space: normal;
+        }
+        .card2 {
+          transition: 0.3s;
+          background-image: white;
+          padding: 2px 16px;
+          overflow-x: hidden;
+          overflow-y: auto;
+          white-space: normal;
+        }
+        .card3 {
+          transition: 0.3s;
+          background-image: white;
+          padding: 2px 16px;
+          overflow-x: hidden;
+          overflow-y: auto;
+          white-space: normal;
+        }
+      }
+      .img {
+        height: 50px;
+        width: 50px;
+        vertical-align: 10px;
+      }
+      p {
+        margin: 0 auto;
+        position: relative;
+        white-space: nowrap;
+      }
+      .text {
+        color: #9a9a9a;
+      }
+      ::-webkit-scrollbar {
+        background: transparent;
+      }
+    </style>
+  </head>
+  <body background-color: white);>
+    <div class="card">
+      <div class="row">
+        <div class="container-fluid">
+          <br>
+          <div><h2 style="font-size:30px; color:white"><b>Popular Solutions</b></h2></div>
+          <br>
+          <div class="card-deck">
+            <div class="basic_card">
+              <div class="container">
+                <table>
+                  <tr>
+                    <td class="td_edited2"><img src="https://icons-for-free.com/iconfiles/png/512/app+global+ios+media+paypal+social+icon-1320193329393551804.png"; class="img"></img></td>
+                    <td class="td_edited"><p style="font-size:18px"><b>Cummins Connected <br> Diagnostics</b></p>
+                    <p style="font-size:13px" class="text"><img style="width:20px;height:20px" src="https://uploads-ssl.webflow.com/5d54f355f553831a29d84751/5d7851b855dab24a9b0f01be_streamline-icon-building-1%40100x100%20(1).png"></img> Cummins Inc.</p></td>
+                  </tr>
+                </table>
+                <div>
+                  <p style="font-size:14.5px" class="text">The moment a Cummins engine system <br> fault occurs, the Geotab device transmits <br> key engine system...</p>
+                  <form action = "https://www.google.com">
+                    <button class = "button2" type = "submit">Request Info</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="basic_card">
+              <div class="row">
+                <div class="container">
+                  <table>
+                    <tr>
+                      <td class="td_edited2"><img src="https://icons-for-free.com/iconfiles/png/512/app+global+ios+media+paypal+social+icon-1320193329393551804.png"; class="img"></img></td>
+                      <td class="td_edited"><p style="font-size:18px"><b>Fuel Tracker</b></p>
+                      <p style="font-size:13px" class="text"><img style="width:20px;height:20px" src="https://uploads-ssl.webflow.com/5d54f355f553831a29d84751/5d7851b855dab24a9b0f01be_streamline-icon-building-1%40100x100%20(1).png"></img> Geotab Inc.</p></td>
+                    </tr>
+                  </table>
+                  <div>
+                    <p style="font-size:14.5px" class="text">Drivers are busy, and illegible or poorly <br> stored paper forms can lead to gaps in <br> compliance reporting and stalled work...</p>
+                    <table>
+                      <tr>
+                        <td>
+                          <form action = "https://www.google.com">
+                            <button class = "button1" type = "submit">Install</button>
+                          </form>
+                        </td>
+                        <td>
+                          <form action = "https://www.google.com">
+                            <button class = "button3" type = "submit">Request Info</button>
+                          </form>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="basic_card">
+              <div class="row">
+                <div class="container">
+                  <table>
+                    <tr>
+                      <td class="td_edited2"><img src="https://icons-for-free.com/iconfiles/png/512/app+global+ios+media+paypal+social+icon-1320193329393551804.png"; class="img"></img></td>
+                      <td class="td_edited"><p style="font-size:18px"><b>Excessive Yard <br> Move</b></p>
+                      <p style="font-size:13px" class="text"><img style="width:20px;height:20px" src="https://uploads-ssl.webflow.com/5d54f355f553831a29d84751/5d7851b855dab24a9b0f01be_streamline-icon-building-1%40100x100%20(1).png"></img> Geotab Inc.</p></td>
+                    </tr>
+                  </table>
+                  <div>
+                    <p style="font-size:14.5px" class="text">The Excessive Yard Move report allows <br> administrators to gather details on <br> individual drivers and summarized view of...</p>
+                    <form action = "https://www.google.com">
+                    <button class = "button1" type = "submit">Install</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="basic_card">
+              <div class="row">
+                <div class="container">
+                  <table>
+                    <tr>
+                      <td class="td_edited2"><img src="https://icons-for-free.com/iconfiles/png/512/app+global+ios+media+paypal+social+icon-1320193329393551804.png"; class="img"></img></td>
+                      <td class="td_edited"><p style="font-size:18px"><b>Data Diagnostc & <br> Malfunctions</b></p>
+                      <p style="font-size:13px" class="text"><img style="width:20px;height:20px" src="https://uploads-ssl.webflow.com/5d54f355f553831a29d84751/5d7851b855dab24a9b0f01be_streamline-icon-building-1%40100x100%20(1).png"></img> Geotab Inc.</p></td>
+                    </tr>
+                  </table>
+                  <div>
+                    <p style="font-size:14.5px" class="text">The Data Diagnostic & Malfunctions Report <br> is designed to capture data diagnostic <br> & malfunctions events by vehicle.</p>
+                    <form action = "https://www.google.com">
+                    <button class = "button1" type = "submit">Install</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="basic_card">
+              <div class="row">
+                <div class="container">
+                  <table>
+                    <tr>
+                      <td class="td_edited2"><img src="https://icons-for-free.com/iconfiles/png/512/app+global+ios+media+paypal+social+icon-1320193329393551804.png"; class="img"></img></td>
+                      <td class="td_edited"><p style="font-size:18px"><b>ELD Settings <br> Validator</b></p>
+                      <p style="font-size:13px" class="text"><img style="width:20px;height:20px" src="https://uploads-ssl.webflow.com/5d54f355f553831a29d84751/5d7851b855dab24a9b0f01be_streamline-icon-building-1%40100x100%20(1).png"></img> Geotab Inc.</p></td>
+                    </tr>
+                  </table>
+                  <div>
+                    <p style="font-size:14.5px" class="text">The ELD Settings Validator is a MyGeotab <br> Add-In that is designed to help <br> administrators view important driver &...</p>
+                    <form action = "https://www.google.com">
+                    <button class = "button1" type = "submit">Install</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card2">
+      <div class="row">
+        <div class="container-fluid">
+          <br>
+          <div>
+            <h3 style="font-size:30px; color:black"><b>Discover New Solutions</b></h4>
+          </div>
+          <br>
+          <div class="basic_card2">
+            <div class="row">
+              <div class="container">
+                <table>
+                  <tr>
+                    <td class="td_edited2"><img src="https://icons-for-free.com/iconfiles/png/512/app+global+ios+media+paypal+social+icon-1320193329393551804.png"; class="img"></img></td>
+                    <td class="td_edited"><p style="font-size:18px"><b>Encore</b></p>
+                    <p style="font-size:13px" class="text"><img style="width:20px;height:20px" src="https://uploads-ssl.webflow.com/5d54f355f553831a29d84751/5d7851b855dab24a9b0f01be_streamline-icon-building-1%40100x100%20(1).png"></img> Geotab Inc.</p></td>
+                  </tr>
+                </table>
+                <div>
+                  <p style="font-size:14.5px" class="text">The ELD Settings Validator is a MyGeotab <br> Add-In that is designed to help <br> administrators view important driver &...</p>
+                  <form action = "https://www.google.com">
+                  <button class = "button2" type = "submit">Request Info</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="basic_card2">
+            <div class="row">
+              <div class="container">
+                <table>
+                  <tr>
+                    <td class="td_edited2"><img src="https://icons-for-free.com/iconfiles/png/512/app+global+ios+media+paypal+social+icon-1320193329393551804.png"; class="img"></img></td>
+                    <td class="td_edited"><p style="font-size:18px"><b>Geotab Garmin <br> Bundle</b></p>
+                    <p style="font-size:13px" class="text"><img style="width:20px;height:20px" src="https://uploads-ssl.webflow.com/5d54f355f553831a29d84751/5d7851b855dab24a9b0f01be_streamline-icon-building-1%40100x100%20(1).png"></img> Geotab Inc.</p></td>
+                  </tr>
+                </table>
+                <div>
+                  <p style="font-size:14.5px" class="text">The Data Diagnostic & Malfunctions Report <br> is designed to capture data diagnostic <br> & malfunctions events by vehicle.</p>
+                  <form action = "https://www.google.com">
+                  <button class = "button2" type = "submit">Request Info</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="basic_card2">
+            <div class="row">
+              <div class="container">
+                <table>
+                  <tr>
+                    <td class="td_edited2"><img src="https://icons-for-free.com/iconfiles/png/512/app+global+ios+media+paypal+social+icon-1320193329393551804.png"; class="img"></img></td>
+                    <td class="td_edited"><p style="font-size:18px"><b>BlackBerry RADAR</b></p>
+                    <p style="font-size:13px" class="text"><img style="width:20px;height:20px" src="https://uploads-ssl.webflow.com/5d54f355f553831a29d84751/5d7851b855dab24a9b0f01be_streamline-icon-building-1%40100x100%20(1).png"></img> Cummins Inc.</p></td>
+                  </tr>
+                </table>
+                <div>
+                  <p style="font-size:14.5px" class="text">The moment a Cummins engine system <br> fault occurs, the Geotab device transmits <br> key engine system...</p>
+                  <form action = "https://www.google.com">
+                  <button class = "button2" type = "submit">Request Info</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="basic_card2">
+            <div class="row">
+              <div class="container">
+                <table>
+                  <tr>
+                    <td class="td_edited2"><img src="https://icons-for-free.com/iconfiles/png/512/app+global+ios+media+paypal+social+icon-1320193329393551804.png"; class="img"></img></td>
+                    <td class="td_edited"><p style="font-size:18px"><b>HOS Driver Summary</b></p>
+                    <p style="font-size:13px" class="text"><img style="width:20px;height:20px" src="https://uploads-ssl.webflow.com/5d54f355f553831a29d84751/5d7851b855dab24a9b0f01be_streamline-icon-building-1%40100x100%20(1).png"></img> Geotab Inc.</p></td>
+                  </tr>
+                </table>
+                <div>
+                  <p style="font-size:14.5px" class="text">Drivers are busy, and illegible or poorly <br> stored paper forms can lead to gaps in <br> compliance reporting and stalled work...</p>
+                  <table>
+                    <tr>
+                      <td>
+                        <form action = "https://www.google.com">
+                        <button class = "button1" type = "submit">Install</button>
+                        </form>
+                      </td>
+                      <td>
+                        <form action = "https://www.google.com">
+                        <button class = "button3" type = "submit">Request Info</button>
+                        </form>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="basic_card2">
+            <div class="row">
+              <div class="container">
+                <table>
+                  <tr>
+                    <td class="td_edited2"><img src="https://icons-for-free.com/iconfiles/png/512/app+global+ios+media+paypal+social+icon-1320193329393551804.png"; class="img"></img></td>
+                    <td class="td_edited"><p style="font-size:18px"><b>Uptake</b></p>
+                    <p style="font-size:13px" class="text"><img style="width:20px;height:20px" src="https://uploads-ssl.webflow.com/5d54f355f553831a29d84751/5d7851b855dab24a9b0f01be_streamline-icon-building-1%40100x100%20(1).png"></img> Geotab Inc.</p></td>
+                  </tr>
+                </table>
+                <div>
+                  <p style="font-size:14.5px" class="text">The Excessive Yard Move report allows <br> administrators to gather details on <br> individual drivers and summarized view of...</p>
+                  <form action = "https://www.google.com">
+                  <button class = "button2" type = "submit">Request Info</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+    <div class="card3" style="margin-top: -30px;">
+      <div class="basic_card2">
+        <div class="row">
+          <div class="container">
+            <table>
+              <tr>
+                <td class="td_edited2"><img src="https://icons-for-free.com/iconfiles/png/512/app+global+ios+media+paypal+social+icon-1320193329393551804.png"; class="img"></img></td>
+                <td class="td_edited"><p style="font-size:18px"><b>Uptake</b></p>
+                <p style="font-size:13px" class="text"><img style="width:20px;height:20px" src="https://uploads-ssl.webflow.com/5d54f355f553831a29d84751/5d7851b855dab24a9b0f01be_streamline-icon-building-1%40100x100%20(1).png"></img> Geotab Inc.</p></td>
+              </tr>
+            </table>
+            <div>
+              <p style="font-size:14.5px" class="text">The Excessive Yard Move report allows <br> administrators to gather details on <br> individual drivers and summarized view of...</p>
+              <form action = "https://www.google.com">
+              <button class = "button2" type = "submit">Request Info</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="basic_card2">
+        <div class="row">
+          <div class="container">
+            <table>
+              <tr>
+                <td class="td_edited2"><img src="https://icons-for-free.com/iconfiles/png/512/app+global+ios+media+paypal+social+icon-1320193329393551804.png"; class="img"></img></td>
+                <td class="td_edited"><p style="font-size:18px"><b>HOS Driver Summary</b></p>
+                <p style="font-size:13px" class="text"><img style="width:20px;height:20px" src="https://uploads-ssl.webflow.com/5d54f355f553831a29d84751/5d7851b855dab24a9b0f01be_streamline-icon-building-1%40100x100%20(1).png"></img> Geotab Inc.</p></td>
+              </tr>
+            </table>
+            <div>
+              <p style="font-size:14.5px" class="text">Drivers are busy, and illegible or poorly <br> stored paper forms can lead to gaps in <br> compliance reporting and stalled work...</p>
+              <table>
+                <tr>
+                  <td>
+                    <form action = "https://www.google.com">
+                    <button class = "button1" type = "submit">Install</button>
+                    </form>
+                  </td>
+                  <td>
+                    <form action = "https://www.google.com">
+                    <button class = "button3" type = "submit">Request Info</button>
+                    </form>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="basic_card2">
+        <div class="row">
+          <div class="container">
+            <table>
+              <tr>
+                <td class="td_edited2"><img src="https://icons-for-free.com/iconfiles/png/512/app+global+ios+media+paypal+social+icon-1320193329393551804.png"; class="img"></img></td>
+                <td class="td_edited"><p style="font-size:18px"><b>BlackBerry RADAR</b></p>
+                <p style="font-size:13px" class="text"><img style="width:20px;height:20px" src="https://uploads-ssl.webflow.com/5d54f355f553831a29d84751/5d7851b855dab24a9b0f01be_streamline-icon-building-1%40100x100%20(1).png"></img> Cummins Inc.</p></td>
+              </tr>
+            </table>
+            <div>
+              <p style="font-size:14.5px" class="text">The moment a Cummins engine system <br> fault occurs, the Geotab device transmits <br> key engine system...</p>
+              <form action = "https://www.google.com">
+              <button class = "button2" type = "submit">Request Info</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="basic_card2">
+        <div class="row">
+          <div class="container">
+            <table>
+              <tr>
+                <td class="td_edited2"><img src="https://icons-for-free.com/iconfiles/png/512/app+global+ios+media+paypal+social+icon-1320193329393551804.png"; class="img"></img></td>
+                <td class="td_edited"><p style="font-size:18px"><b>Excessive Yard <br> Move</b></p>
+                <p style="font-size:13px" class="text"><img style="width:20px;height:20px" src="https://uploads-ssl.webflow.com/5d54f355f553831a29d84751/5d7851b855dab24a9b0f01be_streamline-icon-building-1%40100x100%20(1).png"></img> Geotab Inc.</p></td>
+              </tr>
+            </table>
+            <div>
+              <p style="font-size:14.5px" class="text">The Excessive Yard Move report allows <br> administrators to gather details on <br> individual drivers and summarized view of...</p>
+              <form action = "https://www.google.com">
+              <button class = "button1" type = "submit">Install</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="basic_card2">
+        <div class="row">
+          <div class="container">
+            <table>
+              <tr>
+                <td class="td_edited2"><img src="https://icons-for-free.com/iconfiles/png/512/app+global+ios+media+paypal+social+icon-1320193329393551804.png"; class="img"></img></td>
+                <td class="td_edited"><p style="font-size:18px"><b>Encore</b></p>
+                <p style="font-size:13px" class="text"><img style="width:20px;height:20px" src="https://uploads-ssl.webflow.com/5d54f355f553831a29d84751/5d7851b855dab24a9b0f01be_streamline-icon-building-1%40100x100%20(1).png"></img> Geotab Inc.</p></td>
+              </tr>
+            </table>
+            <div>
+              <p style="font-size:14.5px" class="text">The ELD Settings Validator is a MyGeotab <br> Add-In that is designed to help <br> administrators view important driver &...</p>
+              <form action = "https://www.google.com">
+              <button class = "button2" type = "submit">Request Info</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>                   
+    </div>
+  </body>
+</html>
