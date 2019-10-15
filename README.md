@@ -10,7 +10,8 @@ We are going to reuse this design to have a "Like/Dislike | Recommend/Not Recomm
 <!-- TOC -->
 
 - [:movie_camera: Result](#moviecamera-result)
-- [New movies html](#new-movies-html)
+- [Usage](#usage)
+- [The Movie Database API](#the-movie-database-api)
 - [Some Examples](#some-examples)
   - [Discover Movies](#discover-movies)
   - [Movie Details](#movie-details)
@@ -38,8 +39,21 @@ The app will look like this:
 
 > here only one box is shown, obviously you will work with a variable list of movies.
 
+# Usage
 
-# New movies html
+> Fill this with your instructions on how to run your app.
+
+```bash
+# IT MUST RUN VIA DOCKER
+# example 1
+docker run -it -p 8080:8080 your-image/love-my-movies:1.20
+
+# example 2
+docker-compose up
+
+```
+
+# The Movie Database API
 We are going to use The Movie Database API 3 [TMDd](https://www.themoviedb.org/) to retrieve our initial data.
 
 You better create your own account and respect the request limits, that I why I'm including some `.json` files already.
@@ -92,6 +106,7 @@ Which gave me [trending_movies.json](trending_movies.json)
 - [ ] A good html/css layout of your own.
 - [ ] Modularize everything with files and functions.
 - [ ] Use javascript to "Click and show more details of the movie"
+- [ ] IT WILL NOT RUN under python, but Docker, you must provide under the [README's Usage](#usage) how to run it using Docker commands
 
 
 
