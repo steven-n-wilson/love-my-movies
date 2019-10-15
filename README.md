@@ -1,5 +1,7 @@
 
-# Love my movies
+![lmm](.docs/love_my_movies.png)
+
+# :heart: Love my movies
 
 After having our own html, css setup from [Figma UIUX class ](https://www.figma.com/file/sW8aM7yjCGqxB6V3tvn7fw/Homework?node-id=0%3A1)
 
@@ -8,8 +10,8 @@ We are going to reuse this design to have a "Like/Dislike | Recommend/Not Recomm
 ---
 <!-- TOC -->
 
-- [Love my movies](#love-my-movies)
-- [Result](#result)
+- [:heart: Love my movies](#heart-love-my-movies)
+- [:movie_camera: Result](#moviecamera-result)
 - [New movies html](#new-movies-html)
 - [Some Examples](#some-examples)
   - [Discover Movies](#discover-movies)
@@ -21,7 +23,7 @@ We are going to reuse this design to have a "Like/Dislike | Recommend/Not Recomm
 <!-- /TOC -->
 
 
-# Result
+# :movie_camera: Result
 
 The app will look like this:
 
