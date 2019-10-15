@@ -16,6 +16,7 @@ We are going to reuse this design to have a "Like/Dislike | Recommend/Not Recomm
   - [Movie Details](#movie-details)
   - [Trending Movies](#trending-movies)
 - [Not Extras, but required (MUST)](#not-extras-but-required-must)
+- [You already now how to deliever it ;)](#you-already-now-how-to-deliever-it)
 
 <!-- /TOC -->
 
@@ -86,8 +87,16 @@ Which gave me [trending_movies.json](trending_movies.json)
 - [ ] Use Redis as the counter DB (incr/decr vote_count)
 - [ ] Use Redis to store any details or additional info for the movies (JSON respond)
 - [ ] Use Redis as a cache.
-- [ ] CI/CD (you can use Gitlab CI /Travis/ Circle CI)
+- [ ] CI/CD (you can use GithubActions (beta) / Gitlab CI /Travis/ Circle CI)
 - [ ] Dockerfile with a valid docker build & push to a valid Docker Hub repository.
 - [ ] A good html/css layout of your own.
 - [ ] Modularize everything with files and functions.
 - [ ] Use javascript to "Click and show more details of the movie"
+
+
+
+# You already now how to deliever it ;)
+- FORK it
+- WORK it
+- GIT TAG it
+- DELIVER it
