@@ -34,6 +34,7 @@ app = Flask(__name__)
 # print(r.get("title"))
 
 
+
 with open("trending_movies.json", "r", encoding="utf8") as my_file:
     data = json.load(my_file) 
 
