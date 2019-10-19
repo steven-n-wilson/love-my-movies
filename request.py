@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 from flask import Flask, render_template
-import requests, sys, csv, json, re, os, urllib.request, redis
+import requests, sys, json, redis
 
 # url variables
 url = "https://api.themoviedb.org/3/trending/movie/week?api_key=231a360ba06b66e4033e0580923144b1"
