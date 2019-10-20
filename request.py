@@ -14,7 +14,7 @@ except:
     print("unable to get {url}")
     sys.exit(1)
 
-r = redis.Redis(host='localhost', port=6379, db=0, charset="utf-8", decode_responses=True)
+r = redis.Redis(host='redis', port=6379, db=0, charset="utf-8", decode_responses=True)
 
 # with open ("trending_movies2.json", "w+") as f:
 #     json.dump(html_content, f, sort_keys=True, indent=4, separators=(",", ": "))
@@ -142,4 +142,4 @@ def test():
     return render_template("test.html")
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(host="0.0.0.0")
