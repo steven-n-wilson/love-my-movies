@@ -38,7 +38,7 @@ app = Flask(__name__)
 with open("trending_movies.json", "r", encoding="utf8") as my_file:
     data = json.load(my_file) 
 
-with open("Discover_movies.json", "r", encoding="utf8") as my_f:
+with open("discover_movies.json", "r", encoding="utf8") as my_f:
     data2 = json.load(my_f) 
 
 # Initializes counters using redis at base values from request.
