@@ -1,4 +1,6 @@
 FROM python:3-alpine
-ADD request.py /
+COPY . /request.py
+WORKDIR /request.py
+ENTRYPOINT ["python"]
 RUN pip install -r requirements.txt
-CMD [ "python", "./request.py" ]
+CMD [ "./request.py" ]
