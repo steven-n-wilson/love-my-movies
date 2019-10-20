@@ -51,11 +51,15 @@ The app will look like this:
 
 ```bash
 # IT MUST RUN VIA DOCKER
-# example 1
-docker run -it -p 8080:8080 your-image/love-my-movies:1.20
 
-# example 2
+#First Command
+docker build -t lovemymovies .
+
+#Second Command
 docker-compose up
+
+Hosted on:
+http://127.0.0.1:5000/
 
 ```
 
@@ -107,7 +111,7 @@ Which gave me [trending_movies.json](trending_movies.json)
 - [ ] Use Redis as the counter DB (incr/decr vote_count)
 - [ ] Use Redis to store any details or additional info for the movies (JSON respond)
 - [ ] Use Redis as a cache.
-- [ ] CI/CD (you can use GithubActions (beta) / Gitlab CI /Travis/ Circle CI)
+- [x] CI/CD (you can use GithubActions (beta) / Gitlab CI /Travis/ Circle CI)
 - [ ] Dockerfile with a valid docker build & push to a valid Docker Hub repository.
 - [x] A good html/css layout of your own.
 - [x] Modularize everything with files and functions.
