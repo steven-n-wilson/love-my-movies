@@ -1,6 +1,7 @@
 FROM python:3-alpine
-COPY . /request.py
-WORKDIR /request.py
+COPY . /app
+WORKDIR /app
 ENTRYPOINT ["python"]
 RUN pip install -r requirements.txt
-CMD [ "./request.py" ]
+EXPOSE 5000
+CMD [ "request.py" ]
