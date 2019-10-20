@@ -53,14 +53,22 @@ The app will look like this:
 # IT MUST RUN VIA DOCKER
 
 #First Command
-docker build -t lovemymovies .
+docker build --tag lovemymovies .
 
 #Second Command
-docker-compose up
+docker create -i -t -p 5000:5000 lovemymovies
+
+#Third Command
+docker-compose up -d
+
+#Fourth Command
+docker-machine ip
 
 Hosted on:
-http://127.0.0.1:5000/
+http://<docker-machine ip>:5000/
 
+Example of host page:
+http://192.168.99.100:5000/
 ```
 
 # The Movie Database API
@@ -112,11 +120,11 @@ Which gave me [trending_movies.json](trending_movies.json)
 - [ ] Use Redis to store any details or additional info for the movies (JSON respond)
 - [ ] Use Redis as a cache.
 - [x] CI/CD (you can use GithubActions (beta) / Gitlab CI /Travis/ Circle CI)
-- [ ] Dockerfile with a valid docker build & push to a valid Docker Hub repository.
+- [x] Dockerfile with a valid docker build & push to a valid Docker Hub repository.
 - [x] A good html/css layout of your own.
 - [x] Modularize everything with files and functions.
 - [ ] Use javascript to "Click and show more details of the movie"
-- [ ] IT WILL NOT RUN under python, but Docker, you must provide under the [README's Usage](#usage) how to run it using Docker commands
+- [x] IT WILL NOT RUN under python, but Docker, you must provide under the [README's Usage](#usage) how to run it using Docker commands
 
 
 
