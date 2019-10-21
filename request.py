@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import requests, sys, json, redis
 
 # url variables
@@ -10,47 +10,27 @@ url3 = "https://api.themoviedb.org/3/movie/upcoming?api_key=231a360ba06b66e4033e
 try:
     html_content1 = requests.get(url1).text
 except:
-    print("unable to get {url1}")
+    print(f"unable to get {url1}")
     sys.exit(1)
 try:
     html_content2 = requests.get(url2).text
 except:
-    print("unable to get {url2}")
+    print(f"unable to get {url2}")
     sys.exit(1)
 try:
     html_content3 = requests.get(url3).text
 except:
-    print("unable to get {url3}")
+    print(f"unable to get {url3}")
     sys.exit(1)
 
 # Creates Redis host and variable
 r = redis.Redis(host='redis', port=6379, db=0, charset="utf-8", decode_responses=True)
-
-# with open ("trending_movies2.json", "w+") as f:
-#     json.dump(html_content1, f, sort_keys=True, indent=4, separators=(",", ": "))
 
 app = Flask(__name__)
 
 trending = json.loads(html_content1)
 discover = json.loads(html_content2)
 upcoming = json.loads(html_content3)
-
-# with open("trending_movies.json", "w+") as f:
-#     json.dump(html_content1, f, sort_keys=True, indent=4)
-
-# with open("trending_movies.json", "w+") as f:
-#     json.dump(soup1, f, sort_keys=True, indent=4)
-
-# r.set(html_content1)
-
-# print(r.get("title"))
-
-
-# Reads json files to pass arguments
-# with open("trending_movies.json", "r", encoding="utf8") as my_file:
-#     data = json.load(my_file) 
-# with open("discover_movies.json", "r", encoding="utf8") as my_f:
-#     data2 = json.load(my_f) 
 
 # Initializes counters using redis at base values from request.
 #------------------------------------------------------------------------------------
@@ -146,13 +126,70 @@ r.set("average15", upcoming["results"][5]["vote_average"])
 r.set("overview15", upcoming["results"][5]["overview"])
 r.set("counter15", upcoming["results"][5]["vote_count"])
 
-# Handles incr or decr for individual counts
-# if(increase1):
-#     r.incr("counter1")
-# Tecnicamente así se haría pero en todos los sitios que he visitado dice que necesito AJAX para afectar Redis.
 
-@app.route("/") # info page
+@app.route("/", methods=["GET", "POST"]) # info page
 def info():
+    if request.method == "POST":
+        if "button1" in request.form:
+            r.incr("counter1", 1)
+        if "button2" in request.form:
+            r.decr("counter1", 1)
+        if "button3" in request.form:
+            r.incr("counter2", 1)
+        if "button4" in request.form:
+            r.decr("counter2", 1)
+        if "button5" in request.form:
+            r.incr("counter3", 1)
+        if "button6" in request.form:
+            r.decr("counter3", 1)
+        if "button7" in request.form:
+            r.incr("counter4", 1)
+        if "button8" in request.form:
+            r.decr("counter4", 1)
+        if "button9" in request.form:
+            r.incr("counter5", 1)
+        if "button10" in request.form:
+            r.decr("counter5", 1)
+        if "button11" in request.form:
+            r.incr("counter6", 1)
+        if "button12" in request.form:
+            r.decr("counter6", 1)
+        if "button13" in request.form:
+            r.decr("counter7", 1)
+        if "button14" in request.form:
+            r.incr("counter7", 1)
+        if "button15" in request.form:
+            r.decr("counter8", 1)
+        if "button16" in request.form:
+            r.decr("counter8", 1)
+        if "button17" in request.form:
+            r.incr("counter9", 1)
+        if "button18" in request.form:
+            r.decr("counter9", 1)
+        if "button19" in request.form:
+            r.decr("counter10", 1)
+        if "button20" in request.form:
+            r.incr("counter10", 1)
+        if "button21" in request.form:
+            r.decr("counter11", 1)
+        if "button22" in request.form:
+            r.incr("counter11", 1)
+        if "button23" in request.form:
+            r.decr("counter12", 1)
+        if "button24" in request.form:
+            r.incr("counter12", 1)
+        if "button25" in request.form:
+            r.decr("counter13", 1)
+        if "button26" in request.form:
+            r.incr("counter13", 1)
+        if "button27" in request.form:
+            r.decr("counter14", 1)
+        if "button28" in request.form:
+            r.decr("counter14", 1)
+        if "button29" in request.form:
+            r.incr("counter15", 1)
+        if "button30" in request.form:
+            r.decr("counter15", 1)
     return render_template(
         "page.html",
         #--------------------------------------------------------------Trending-----------
