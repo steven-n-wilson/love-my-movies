@@ -116,7 +116,7 @@ Which gave me [trending_movies.json](trending_movies.json)
 # Not Extras, but required (MUST)
 
 - [x] Use Flask as backend (for now)
-- [x] Use Redis as the counter DB (incr/decr vote_count)
+- [ ] Use Redis as the counter DB (incr/decr vote_count)
 - [x] Use Redis to store any details or additional info for the movies (JSON respond)
 - [x] Use Redis as a cache.
 - [x] CI/CD (you can use GithubActions (beta) / Gitlab CI /Travis/ Circle CI)
