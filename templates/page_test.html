@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homework</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=auto, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        background-color: #141414;
+      }
+      button {
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+        margin: 10px 10px 10px 10px;
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+      }
+      .td_edited {
+        padding: 0px 10px;
+        vertical-align: top;
+      }
+      .td_edited2 {
+        padding: 0px 0px;
+      }
+      .button1 {
+        background-color: green;
+        border: 2px solid white;
+        padding: 0px 0px;
+        height: 34px;
+        width: 117px;
+        position: absolute;
+        top: 74%;
+        left: 0%;
+      }
+      .button2 {
+        background-color: #ff0000;
+        border: 2px solid white;
+        padding: 0px 0px;
+        height: 34px;
+        width: 117px;
+        position: absolute;
+        top: 74%;
+        right: 0%;
+      }
+      .button3 {
+        background-color: grey;
+        border: 2px solid white;
+        padding: 0px 0px;
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        top: 0%;
+        right: 0%;
+      }
+      .counter {
+        padding: 0px 0px;
+        height: 34px;
+        width: 50px;
+        position: absolute;
+        top: 79%;
+        left: 42%;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        }
+      @media screen and (min-width: 574px) {
+        .basic_card {
+          transition: 0.3s;
+          background-color: white;
+          padding: 8px 10px;
+          border-radius: 12px;
+          width: 300px;
+          height: 200px;
+          position: relative;
+          top: 20px;
+          display: inline-flex;
+          margin-right: 10px;
+        }
+        .card {
+          transition: 0.3s;
+          padding: 2px 16px;
+          height: 300px;
+          overflow-x: auto;
+          overflow-y: auto;
+          white-space: nowrap;
+        }
+        .card2 {
+          transition: 0.3s;
+          background-image: white;
+          padding: 2px 16px;
+          overflow-x: auto;
+          overflow-y: auto;
+          white-space: nowrap;
+          height: 300px;
+        }
+        .card3 {
+          transition: 0.3s;
+          background-image: white;
+          padding: 2px 16px;
+          overflow-x: auto;
+          overflow-y: auto;
+          white-space: nowrap;
+          height: 300px;
+        }
+        h2 {
+          position: absolute;
+          top: 0px;
+          left: 10px;
+        }
+        h3 {
+          position: absolute;
+          top: 290px;
+          left: 10px;
+        }
+        h4 {
+          position: absolute;
+          top: 600px;
+          left: 10px;
+        }
+        .card-columns {
+          column-count: 5;
+        }
+      }
+      @media screen and (min-width: 0px) and (max-width: 573px) {
+        .card-columns {
+          column-count: 1;
+        }
+        .basic_card {
+          transition: 0.3s;
+          background-color: white;
+          padding: 8px 10px;
+          border-radius: 12px;
+          width: 92vw;
+          height: 200px;
+          position: relative;
+          top: 20px;
+          display: inline-flex;
+          margin-right: 10px;
+        }
+        .card {
+          transition: 0.3s;
+          padding: 2px 16px;
+          overflow-x: hidden;
+          overflow-y: auto;
+          white-space: normal;
+        }
+        .card2 {
+          transition: 0.3s;
+          padding: 2px 16px;
+          overflow-x: hidden;
+          overflow-y: auto;
+          white-space: normal;
+        }
+        .card3 {
+          transition: 0.3s;
+          padding: 2px 16px;
+          overflow-x: hidden;
+          overflow-y: auto;
+          white-space: normal;
+        }
+        .button1 {
+          width: 132px;
+        }
+        .button2 {
+          width: 132px;
+        }
+        .counter {
+          left: 43%;
+          top: 76%;
+          font-size: 20px;
+        }
+      }
+      .img {
+        height: 60px;
+        width: 50px;
+        vertical-align: 10px;
+      }
+      p {
+        margin: 0 auto;
+        position: relative;
+        white-space: wrap;
+      }
+      .text1 {
+        white-space: normal;
+      }
+      .text {
+        color: #737373;
+        max-height: 58px;
+        overflow: hidden;
+      }
+      ::-webkit-scrollbar {
+        background: transparent;
+      }
+    </style>
+  </head>
+  <body background-color: white);>
+    <div class="card">
+      <div class="row">
+        <div class="container-fluid">
+          <br>
+          <div><h2 style="font-size:30px; color:white"><b>Trending</b></h2></div>
+          <br>
+
+          {% for item in trending_var %}
+          <div class="basic_card"> <!--Aparentemente tener class="row" causa un error en el white-space del texto. Solucionar o eliminar esto-->
+            <div class="container">
+              <table>
+                <tr>
+                  <td class="td_edited2"><img src="http://image.tmdb.org/t/p/w185//{{ item['poster_path'] }}"; class="img"></img></td>
+                  <td class="td_edited"><p style="font-size:18px" class="text1"><b>{{ item['original_title'] }}</b></p>
+                  <p style="font-size:13px" class="text">Average Rating: {{ item['vote_average'] }}</p></td>
+                </tr>
+              </table>
+              <div>
+                <p style="font-size:14.5px" class="text text1">{{ item['overview'] }}</p>
+                <table>
+                  <tr>
+                    <td>
+                      <form action = "/" method="POST">
+                        <button class = "button1" type = "submit" name="button1" value="add">Like</button>
+                      </form>
+                    </td>
+                    <td><h5 class="counter">{{ item['vote_count'] }}</h5></td>
+                    <td>
+                      <form action = "onClick()">
+                        <button class = "button2" type = "submit" name="button2" value="sub">Dislike</button>
+                      </form>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+
+
+
+        </div>
+      </div>
+    </div>
+    <div class="card2">
+      <div class="row">
+        <div class="container-fluid">
+          <br>
+          <div><h3 style="font-size:30px; color:white"><b>Discover</b></h3></div>
+          <br>
+
+          {% for item in discover_var %}
+          <div class="basic_card"> <!--Aparentemente tener class="row" causa un error en el white-space del texto. Solucionar o eliminar esto-->
+            <div class="container">
+              <table>
+                <tr>
+                  <td class="td_edited2"><img src="http://image.tmdb.org/t/p/w185//{{ item['poster_path'] }}"; class="img"></img></td>
+                  <td class="td_edited"><p style="font-size:18px" class="text1"><b>{{ item['original_title'] }}</b></p>
+                  <p style="font-size:13px" class="text">Average Rating: {{ item['vote_average'] }}</p></td>
+                </tr>
+              </table>
+              <div>
+                <p style="font-size:14.5px" class="text text1">{{ item['overview'] }}</p>
+                <table>
+                  <tr>
+                    <td>
+                      <form action = "/" method="POST">
+                        <button class = "button1" type = "submit" name="button1" value="add">Like</button>
+                      </form>
+                    </td>
+                    <td><h5 class="counter">{{ item['vote_count'] }}</h5></td>
+                    <td>
+                      <form action = "/" method="POST">
+                        <button class = "button2" type = "submit" name="button2" value="sub">Dislike</button>
+                      </form>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="card3">
+      <div class="row">        
+        <div class="container-fluid">
+          <br>
+          <div><h4 style="font-size:30px; color:white"><b>Upcoming</b></h4></div>
+          <br>
+
+          {% for item in upcoming_var %}
+          <div class="basic_card"> <!--Aparentemente tener class="row" causa un error en el white-space del texto. Solucionar o eliminar esto-->
+            <div class="container">
+              <table>
+                <tr>
+                  <td class="td_edited2"><img src="http://image.tmdb.org/t/p/w185//{{ item['poster_path'] }}"; class="img"></img></td>
+                  <td class="td_edited"><p style="font-size:18px" class="text1"><b>{{ item['original_title'] }}</b></p>
+                  <p style="font-size:13px" class="text">Average Rating: {{ item['vote_average'] }}</p></td>
+                </tr>
+              </table>
+              <div>
+                <p style="font-size:14.5px" class="text text1">{{ item['overview'] }}</p>
+                <table>
+                  <tr>
+                    <td>
+                      <form action = "/" method="POST">
+                        <button class = "button1" type = "submit" name="button1" value="add">Like</button>
+                      </form>
+                    </td>
+                    <td><h5 class="counter">{{ item['vote_count'] }}</h5></td>
+                    <td>
+                      <form action = "/" method="POST">
+                        <button class = "button2" type = "submit" name="button2" value="sub">Dislike</button>
+                      </form>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+    </div>    
+  </body>
+</html>
