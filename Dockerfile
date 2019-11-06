@@ -4,4 +4,5 @@ WORKDIR /app
 RUN pip install -r requirements.txt
 COPY . /app
 ENTRYPOINT ["python"]
-CMD [ "request.py" ]
+CMD [ "request_test.py" ]
+# Remember to change CMD
