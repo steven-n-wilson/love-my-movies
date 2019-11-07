@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 import requests, sys, json, redis
 
+# "hard-coded version, has all functions but does not have a for loop."
+
 # url variables
 url1 = "https://api.themoviedb.org/3/trending/movie/week?api_key=231a360ba06b66e4033e0580923144b1"
 url2 = "https://api.themoviedb.org/3/discover/movie?api_key=231a360ba06b66e4033e0580923144b1&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1"
@@ -39,92 +41,107 @@ r.set("title1", trending["results"][0]["original_title"])
 r.set("average1", trending["results"][0]["vote_average"])
 r.set("overview1", trending["results"][0]["overview"])
 r.set("counter1", trending["results"][0]["vote_count"])
+r.set("id1", trending["results"][0]["id"])
 
 r.set("poster2", trending["results"][1]["poster_path"])
 r.set("title2", trending["results"][1]["original_title"])
 r.set("average2", trending["results"][1]["vote_average"])
 r.set("overview2", trending["results"][1]["overview"])
 r.set("counter2", trending["results"][1]["vote_count"])
+r.set("id2", trending["results"][1]["id"])
 
 r.set("poster3", trending["results"][2]["poster_path"])
 r.set("title3", trending["results"][2]["original_title"])
 r.set("average3", trending["results"][2]["vote_average"])
 r.set("overview3", trending["results"][2]["overview"])
 r.set("counter3", trending["results"][2]["vote_count"])
+r.set("id3", trending["results"][2]["id"])
 
 r.set("poster4", trending["results"][3]["poster_path"])
 r.set("title4", trending["results"][3]["original_title"])
 r.set("average4", trending["results"][3]["vote_average"])
 r.set("overview4", trending["results"][3]["overview"])
 r.set("counter4", trending["results"][3]["vote_count"])
+r.set("id4", trending["results"][3]["id"])
 
 r.set("poster5", trending["results"][4]["poster_path"])
 r.set("title5", trending["results"][4]["original_title"])
 r.set("average5", trending["results"][4]["vote_average"])
 r.set("overview5", trending["results"][4]["overview"])
 r.set("counter5", trending["results"][4]["vote_count"])
+r.set("id5", trending["results"][4]["id"])
 
 #------------------------------------------------------------------------------------
-r.set("poster6", discover["results"][3]["poster_path"])
-r.set("title6", discover["results"][3]["original_title"])
-r.set("average6", discover["results"][3]["vote_average"])
-r.set("overview6", discover["results"][3]["overview"])
-r.set("counter6", discover["results"][3]["vote_count"])
+r.set("poster6", discover["results"][0]["poster_path"])
+r.set("title6", discover["results"][0]["original_title"])
+r.set("average6", discover["results"][0]["vote_average"])
+r.set("overview6", discover["results"][0]["overview"])
+r.set("counter6", discover["results"][0]["vote_count"])
+r.set("id6", discover["results"][0]["id"])
 
-r.set("poster7", discover["results"][6]["poster_path"])
-r.set("title7", discover["results"][6]["original_title"])
-r.set("average7", discover["results"][6]["vote_average"])
-r.set("overview7", discover["results"][6]["overview"])
-r.set("counter7", discover["results"][6]["vote_count"])
+r.set("poster7", discover["results"][1]["poster_path"])
+r.set("title7", discover["results"][1]["original_title"])
+r.set("average7", discover["results"][1]["vote_average"])
+r.set("overview7", discover["results"][1]["overview"])
+r.set("counter7", discover["results"][1]["vote_count"])
+r.set("id7", discover["results"][1]["id"])
 
-r.set("poster8", discover["results"][7]["poster_path"])
-r.set("title8", discover["results"][7]["original_title"])
-r.set("average8", discover["results"][7]["vote_average"])
-r.set("overview8", discover["results"][7]["overview"])
-r.set("counter8", discover["results"][7]["vote_count"])
+r.set("poster8", discover["results"][2]["poster_path"])
+r.set("title8", discover["results"][2]["original_title"])
+r.set("average8", discover["results"][2]["vote_average"])
+r.set("overview8", discover["results"][2]["overview"])
+r.set("counter8", discover["results"][2]["vote_count"])
+r.set("id8", discover["results"][2]["id"])
 
-r.set("poster9", discover["results"][9]["poster_path"])
-r.set("title9", discover["results"][9]["original_title"])
-r.set("average9", discover["results"][9]["vote_average"])
-r.set("overview9", discover["results"][9]["overview"])
-r.set("counter9", discover["results"][9]["vote_count"])
+r.set("poster9", discover["results"][3]["poster_path"])
+r.set("title9", discover["results"][3]["original_title"])
+r.set("average9", discover["results"][3]["vote_average"])
+r.set("overview9", discover["results"][3]["overview"])
+r.set("counter9", discover["results"][3]["vote_count"])
+r.set("id9", discover["results"][3]["id"])
 
-r.set("poster10", discover["results"][10]["poster_path"])
-r.set("title10", discover["results"][10]["original_title"])
-r.set("average10", discover["results"][10]["vote_average"])
-r.set("overview10", discover["results"][10]["overview"])
-r.set("counter10", discover["results"][10]["vote_count"])
+r.set("poster10", discover["results"][4]["poster_path"])
+r.set("title10", discover["results"][4]["original_title"])
+r.set("average10", discover["results"][4]["vote_average"])
+r.set("overview10", discover["results"][4]["overview"])
+r.set("counter10", discover["results"][4]["vote_count"])
+r.set("id10", discover["results"][4]["id"])
 
 #------------------------------------------------------------------------------------
-r.set("poster11", upcoming["results"][1]["poster_path"])
-r.set("title11", upcoming["results"][1]["original_title"])
-r.set("average11", upcoming["results"][1]["vote_average"])
-r.set("overview11", upcoming["results"][1]["overview"])
-r.set("counter11", upcoming["results"][1]["vote_count"])
+r.set("poster11", upcoming["results"][0]["poster_path"])
+r.set("title11", upcoming["results"][0]["original_title"])
+r.set("average11", upcoming["results"][0]["vote_average"])
+r.set("overview11", upcoming["results"][0]["overview"])
+r.set("counter11", upcoming["results"][0]["vote_count"])
+r.set("id11", upcoming["results"][0]["id"])
 
-r.set("poster12", upcoming["results"][2]["poster_path"])
-r.set("title12", upcoming["results"][2]["original_title"])
-r.set("average12", upcoming["results"][2]["vote_average"])
-r.set("overview12", upcoming["results"][2]["overview"])
-r.set("counter12", upcoming["results"][2]["vote_count"])
+r.set("poster12", upcoming["results"][1]["poster_path"])
+r.set("title12", upcoming["results"][1]["original_title"])
+r.set("average12", upcoming["results"][1]["vote_average"])
+r.set("overview12", upcoming["results"][1]["overview"])
+r.set("counter12", upcoming["results"][1]["vote_count"])
+r.set("id12", upcoming["results"][1]["id"])
 
-r.set("poster13", upcoming["results"][3]["poster_path"])
-r.set("title13", upcoming["results"][3]["original_title"])
-r.set("average13", upcoming["results"][3]["vote_average"])
-r.set("overview13", upcoming["results"][3]["overview"])
-r.set("counter13", upcoming["results"][3]["vote_count"])
+r.set("poster13", upcoming["results"][2]["poster_path"])
+r.set("title13", upcoming["results"][2]["original_title"])
+r.set("average13", upcoming["results"][2]["vote_average"])
+r.set("overview13", upcoming["results"][2]["overview"])
+r.set("counter13", upcoming["results"][2]["vote_count"])
+r.set("id13", upcoming["results"][2]["id"])
 
-r.set("poster14", upcoming["results"][4]["poster_path"])
-r.set("title14", upcoming["results"][4]["original_title"])
-r.set("average14", upcoming["results"][4]["vote_average"])
-r.set("overview14", upcoming["results"][4]["overview"])
-r.set("counter14", upcoming["results"][4]["vote_count"])
+r.set("poster14", upcoming["results"][3]["poster_path"])
+r.set("title14", upcoming["results"][3]["original_title"])
+r.set("average14", upcoming["results"][3]["vote_average"])
+r.set("overview14", upcoming["results"][3]["overview"])
+r.set("counter14", upcoming["results"][3]["vote_count"])
+r.set("id14", upcoming["results"][3]["id"])
 
-r.set("poster15", upcoming["results"][5]["poster_path"])
-r.set("title15", upcoming["results"][5]["original_title"])
-r.set("average15", upcoming["results"][5]["vote_average"])
-r.set("overview15", upcoming["results"][5]["overview"])
-r.set("counter15", upcoming["results"][5]["vote_count"])
+r.set("poster15", upcoming["results"][4]["poster_path"])
+r.set("title15", upcoming["results"][4]["original_title"])
+r.set("average15", upcoming["results"][4]["vote_average"])
+r.set("overview15", upcoming["results"][4]["overview"])
+r.set("counter15", upcoming["results"][4]["vote_count"])
+r.set("id15", upcoming["results"][4]["id"])
 
 
 @app.route("/", methods=["GET", "POST"]) # info page
@@ -199,6 +216,7 @@ def info():
         average_1 = r.get("average1"),
         overview_1 = r.get("overview1"),
         count_1 = r.get("counter1"),
+        id_1 = r.get("id1"),
         
         # The Lion King
         poster_2 = r.get("poster2"),
@@ -206,6 +224,7 @@ def info():
         average_2 = r.get("average2"),
         overview_2 = r.get("overview2"),
         count_2 = r.get("counter2"),
+        id_2 = r.get("id2"),
 
         # El Camino
         poster_3 = r.get("poster3"),
@@ -213,6 +232,7 @@ def info():
         average_3 = r.get("average3"),
         overview_3 = r.get("overview3"),
         count_3 = r.get("counter3"),
+        id_3 = r.get("id3"),
 
         # Toy Story 4
         poster_4 = r.get("poster4"),
@@ -220,6 +240,7 @@ def info():
         average_4 = r.get("average4"),
         overview_4 = r.get("overview4"),
         count_4 = r.get("counter4"),
+        id_4 = r.get("id4"),
 
         # Joker
         poster_5 = r.get("poster5"),
@@ -227,6 +248,7 @@ def info():
         average_5 = r.get("average5"),
         overview_5 = r.get("overview5"),
         count_5 = r.get("counter5"),
+        id_5 = r.get("id5"),
 
         #--------------------------------------------------------------Discover-----------
         # Skipped over any movies that have already been used.
@@ -236,6 +258,7 @@ def info():
         average_6 = r.get("average6"),
         overview_6 = r.get("overview6"),
         count_6 = r.get("counter6"),
+        id_6 = r.get("id6"),
 
         # Gemini Man
         poster_7 = r.get("poster7"),
@@ -243,6 +266,7 @@ def info():
         average_7 = r.get("average7"),
         overview_7 = r.get("overview7"),
         count_7 = r.get("counter7"),
+        id_7 = r.get("id7"),
 
         # Fast and Furious
         poster_8 = r.get("poster8"),
@@ -250,6 +274,7 @@ def info():
         average_8 = r.get("average8"),
         overview_8 = r.get("overview8"),
         count_8 = r.get("counter8"),
+        id_8 = r.get("id8"),
 
         # IP 4
         poster_9 = r.get("poster9"),
@@ -257,6 +282,7 @@ def info():
         average_9 = r.get("average9"),
         overview_9 = r.get("overview9"),
         count_9 = r.get("counter9"),
+        id_9 = r.get("id9"),
 
         # Aladdin
         poster_10 = r.get("poster10"),
@@ -264,6 +290,7 @@ def info():
         average_10 = r.get("average10"),
         overview_10 = r.get("overview10"),
         count_10 = r.get("counter10"),
+        id_10 = r.get("id10"),
 
         #--------------------------------------------------------------Discover-----------
         # Zombieland
@@ -272,6 +299,7 @@ def info():
         average_11 = r.get("average11"),
         overview_11 = r.get("overview11"),
         count_11 = r.get("counter11"),
+        id_11 = r.get("id11"),
 
         # Terminator
         poster_12 = r.get("poster12"),
@@ -279,6 +307,7 @@ def info():
         average_12 = r.get("average12"),
         overview_12 = r.get("overview12"),
         count_12 = r.get("counter12"),
+        id_12 = r.get("id12"),
 
         # The Addams Family
         poster_13 = r.get("poster13"),
@@ -286,6 +315,7 @@ def info():
         average_13 = r.get("average13"),
         overview_13 = r.get("overview13"),
         count_13 = r.get("counter13"),
+        id_13 = r.get("id13"),
 
         # Hustlers
         poster_14 = r.get("poster14"),
@@ -293,6 +323,7 @@ def info():
         average_14 = r.get("average14"),
         overview_14 = r.get("overview14"),
         count_14 = r.get("counter14"),
+        id_14 = r.get("id14"),
 
         # The Lighthouse
         poster_15 = r.get("poster15"),
@@ -300,6 +331,7 @@ def info():
         average_15 = r.get("average15"),
         overview_15 = r.get("overview15"),
         count_15 = r.get("counter15"),
+        id_15 = r.get("id15"),
 
         )
 
