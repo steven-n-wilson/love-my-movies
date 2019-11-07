@@ -69,6 +69,17 @@ http://<docker-machine ip>:5000/
 
 Example of host page:
 http://192.168.99.100:5000/
+
+There are two versions of this project:
+ The original - request.py (working along with page.html)
+ and another file that works with a dynamic for loop:
+ request_test.py (working along with page_test.html)
+
+The original file is more complete as it contains all steps but is hard-coded.
+The second file is improved yet it doesn't contain Redis and the buttons don't increase or decrease the count.
+
+To run either one of these files, change the Dockerfile CMD to the respective file, set to the original by default.
+
 ```
 
 # The Movie Database API
