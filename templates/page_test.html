@@ -218,6 +218,14 @@
                 </tr>
               </table>
               <div>
+                <button class = "button3" onclick="MoreInfo({{ item['id'] }})">i</button>
+              </div>
+              <script>
+              function MoreInfo(data) {
+                location.href = "https://www.themoviedb.org/movie/"+data
+              }
+              </script>
+              <div>
                 <p style="font-size:14.5px" class="text text1">{{ item['overview'] }}</p>
                 <table>
                   <tr>
@@ -228,7 +236,7 @@
                     </td>
                     <td><h5 class="counter">{{ item['vote_count'] }}</h5></td>
                     <td>
-                      <form action = "onClick()">
+                      <form action = "/" method="POST">
                         <button class = "button2" type = "submit" name="button2" value="sub">Dislike</button>
                       </form>
                     </td>
@@ -262,6 +270,14 @@
                   <p style="font-size:13px" class="text">Average Rating: {{ item['vote_average'] }}</p></td>
                 </tr>
               </table>
+              <div>
+                <button class = "button3" onclick="MoreInfo2({{ item['id'] }})">i</button>
+              </div>
+              <script>
+              function MoreInfo2(data) {
+                location.href = "https://www.themoviedb.org/movie/"+data
+              }
+              </script>
               <div>
                 <p style="font-size:14.5px" class="text text1">{{ item['overview'] }}</p>
                 <table>
@@ -306,6 +322,14 @@
                   <p style="font-size:13px" class="text">Average Rating: {{ item['vote_average'] }}</p></td>
                 </tr>
               </table>
+              <div>
+                <button class = "button3" onclick="MoreInfo3({{ item['id'] }})">i</button>
+              </div>
+              <script>
+              function MoreInfo3(data) {
+                location.href = "https://www.themoviedb.org/movie/"+data
+              }
+              </script>
               <div>
                 <p style="font-size:14.5px" class="text text1">{{ item['overview'] }}</p>
                 <table>
