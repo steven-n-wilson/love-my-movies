@@ -37,7 +37,9 @@ discover_test = discover["results"]
 upcoming = json.loads(html_content3)
 upcoming_test = upcoming["results"]
 
-# print(trending_var)
+print(trending_test)
+
+print(trending_test[0]["id"])
 
 # Initializes counters using redis at base values from request.
 #------------------------------------------------------------------------------------
@@ -52,66 +54,10 @@ upcoming_test = upcoming["results"]
 @app.route("/", methods=["GET", "POST"]) # info page
 def info():
     # if request.method == "POST":
-        # if "button1" in request.form:
-        #     r.incr("counter1", 1)
-        # if "button2" in request.form:
-        #     r.decr("counter1", 1)
-        # if "button3" in request.form:
-        #     r.incr("counter2", 1)
-        # if "button4" in request.form:
-        #     r.decr("counter2", 1)
-        # if "button5" in request.form:
-        #     r.incr("counter3", 1)
-        # if "button6" in request.form:
-        #     r.decr("counter3", 1)
-        # if "button7" in request.form:
-        #     r.incr("counter4", 1)
-        # if "button8" in request.form:
-        #     r.decr("counter4", 1)
-        # if "button9" in request.form:
-        #     r.incr("counter5", 1)
-        # if "button10" in request.form:
-        #     r.decr("counter5", 1)
-        # if "button11" in request.form:
-        #     r.incr("counter6", 1)
-        # if "button12" in request.form:
-        #     r.decr("counter6", 1)
-        # if "button13" in request.form:
-        #     r.decr("counter7", 1)
-        # if "button14" in request.form:
-        #     r.incr("counter7", 1)
-        # if "button15" in request.form:
-        #     r.decr("counter8", 1)
-        # if "button16" in request.form:
-        #     r.decr("counter8", 1)
-        # if "button17" in request.form:
-        #     r.incr("counter9", 1)
-        # if "button18" in request.form:
-        #     r.decr("counter9", 1)
-        # if "button19" in request.form:
-        #     r.decr("counter10", 1)
-        # if "button20" in request.form:
-        #     r.incr("counter10", 1)
-        # if "button21" in request.form:
-        #     r.decr("counter11", 1)
-        # if "button22" in request.form:
-        #     r.incr("counter11", 1)
-        # if "button23" in request.form:
-        #     r.decr("counter12", 1)
-        # if "button24" in request.form:
-        #     r.incr("counter12", 1)
-        # if "button25" in request.form:
-        #     r.decr("counter13", 1)
-        # if "button26" in request.form:
-        #     r.incr("counter13", 1)
-        # if "button27" in request.form:
-        #     r.decr("counter14", 1)
-        # if "button28" in request.form:
-        #     r.decr("counter14", 1)
-        # if "button29" in request.form:
-        #     r.incr("counter15", 1)
-        # if "button30" in request.form:
-        #     r.decr("counter15", 1)
+        # for n < 61:
+            # if "button"+n in request.form:
+                # increase the respective counter somehow.
+
     return render_template(
         "page_test.html",
 
