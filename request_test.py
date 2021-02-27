@@ -1,5 +1,8 @@
 from flask import Flask, render_template, request
-import requests, sys, json, redis
+import requests
+import sys
+import json
+import redis
 
 # url variables
 url1 = "https://api.themoviedb.org/3/trending/movie/week?api_key=231a360ba06b66e4033e0580923144b1"
@@ -24,7 +27,8 @@ except:
     sys.exit(1)
 
 # Creates Redis host and variable
-r = redis.Redis(host='redis', port=6379, db=0, charset="utf-8", decode_responses=True)
+r = redis.Redis(host='redis', port=6379, db=0,
+                charset="utf-8", decode_responses=True)
 
 app = Flask(__name__)
 
@@ -42,7 +46,7 @@ print(trending_test)
 print(trending_test[0]["id"])
 
 # Initializes counters using redis at base values from request.
-#------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------
 # r.hmset("trending", trending_test)
 # r.execute_command("JSON.SET", "object", ".", json.dumps(trending_test))
 # for item in trending_test:
@@ -51,12 +55,13 @@ print(trending_test[0]["id"])
 
 # print(r.get("title"))
 
-@app.route("/", methods=["GET", "POST"]) # info page
+
+@app.route("/", methods=["GET", "POST"])  # info page
 def info():
     # if request.method == "POST":
-        # for n < 61:
-            # if "button"+n in request.form:
-                # increase the respective counter somehow.
+    # for n < 61:
+    # if "button"+n in request.form:
+    # increase the respective counter somehow.
 
     return render_template(
         "page_test.html",
@@ -64,11 +69,12 @@ def info():
         # trending_var = r.hgetall("trending"),
         # trending_var = json.loads(r.execute_command("JSON.GET", "object")),
 
-        trending_var = trending_test,
-        discover_var = discover_test,
-        upcoming_var = upcoming_test,
+        trending_var=trending_test,
+        discover_var=discover_test,
+        upcoming_var=upcoming_test,
 
-        )
+    )
+
 
 if __name__ == "__main__":
-    app.run(debug=False, host="0.0.0.0")
+    app.run(debug=False, host="127.0.0.1")
